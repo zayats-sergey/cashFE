@@ -1,0 +1,61 @@
+<p>categories works!</p>
+
+
+<!-- <div class="" *ngFor = "let category of categories">
+    <span *ngIf = "selectedType === category.type" >
+        {{ category.name }} {{ category.type }} [createdAt ({{ category.createdAt }})]
+        <button (click) = "selectCategory(category)">Choice</button>
+    </span>
+</div> -->
+
+
+<table mat-table [dataSource]="someCategories" class="mat-elevation-z8 demo-table" >
+    <!-- Position Column -->
+    <ng-container matColumnDef="number-position">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let someCategories ; let i = index"> {{ i + 1 }} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="buttonSelect">
+      <th mat-header-cell *matHeaderCellDef> buttonSelect </th>
+      <td mat-cell *matCellDef="let category"> <button mat-button color="accent" class="btn"  (click) = "selectCategory(category)">Choice</button> </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef class = "dellCell"> Type </th>
+      <td mat-cell *matCellDef="let category" class = "dellCell"> {{category.type}} </td>
+    </ng-container>
+  
+     <!-- Symbol Column -->
+     <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let category"> {{category.name}} </td>
+    </ng-container>
+
+         <!-- Symbol Column -->
+     <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef class = "dellCell"> createdAt </th>
+        <td mat-cell *matCellDef="let category" class = "dellCell"> {{category.createdAt}} </td>
+    </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="buttonDelete">
+        <th mat-header-cell *matHeaderCellDef> buttonDell </th>
+        <td mat-cell *matCellDef="let category"> 
+          <!-- <button mat-button color="accent" class="btn"  (click) = "dellCategory(category)">delete</button>  -->
+          <button mat-button color="accent" class="btn" (click)="openDialog(category)">delete</button>
+        </td>
+      </ng-container>
+           
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+   
+  
+
+  <!-- <button mat-button (click)="openDialog()">Open dialog</button> -->
+
+
+  

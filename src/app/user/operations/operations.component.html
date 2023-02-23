@@ -1,0 +1,181 @@
+<p>operations works!</p>
+<!-- <div class="" *ngIf = "category" >
+    <div class="" *ngFor = "let tipe of selectedTypeCode">
+        <div class="" *ngFor = "let operation of operations">
+                <span *ngIf = "operation.category.name === category.name && operation.category.type === tipe.code && selectedType === tipe.code">
+                    {{ operation.category.name }} {{ operation.sum }} 
+               </span>
+        </div>
+    </div>
+    <div class="">
+        <button (click) = "addOperation(operation)">add new operation</button>
+    </div>
+</div> -->
+
+
+<form class="container" *ngIf = "category" [formGroup]="profileForm" >
+    <div class="" *ngFor = "let tipe of selectedTypeCode">
+        <table mat-table [dataSource]="operationSome" *ngIf = " selectedType === tipe.code" class="mat-elevation-z8 demo-table" >
+            <!-- Position Column -->
+            <ng-container matColumnDef="number-position" >
+              <th class = "numberPosition createdAtCustom" mat-header-cell *matHeaderCellDef> No. </th>
+              <td  mat-cell *matCellDef="let operationSome ; let i = index"   class="createdAtCustom">
+                <span *ngIf = "operationSome.category.name === category.name">
+                    {{ i + 1 }}
+                </span>  
+              </td>
+              <td mat-footer-cell *matFooterCellDef></td>
+            </ng-container>
+
+            
+            <!-- Name Column -->
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef> description </th>
+              <td mat-cell *matCellDef="let operation" > 
+                <span *ngIf = "  operation.category.type === tipe.code && operation.category.name === category.name" >
+                  <mat-accordion>
+                    <mat-expansion-panel hideToggle>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          {{operation.description}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          OPERATION NAME
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <mat-action-row>
+                        <button mat-button 
+                          *ngIf = "operation.selected !== true"  
+                          color="primary" 
+                          (click) = "selectOperation(operation)"
+                          class = "customButton"
+                          >change description
+                        </button>
+                        <span *ngIf = "operation.selected !== true" class = "customSpan">
+                          {{operation.description}}
+                        </span>
+                        <button mat-button 
+                          *ngIf = "operation.selected === true" 
+                          color="primary" 
+                          (click) = "mergeOperation($event, operation)"
+                          class = "customButton"
+                          >merge description
+                        </button>
+                        <textarea *ngIf = "operation.selected === true"  formControlName="firstName"  cols="" rows="1">
+                          {{operation.description}}
+                        </textarea>
+                      </mat-action-row>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                </span>  
+              </td>
+              <td mat-footer-cell *matFooterCellDef class = "total"> Total </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="sum">
+              <th mat-header-cell *matHeaderCellDef> Sum </th>
+              <td mat-cell *matCellDef="let operation" > 
+                <span *ngIf = "  operation.category.type === tipe.code && operation.category.name === category.name">
+                  <mat-accordion>
+                    <mat-expansion-panel hideToggle>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          {{operation.sum | currency}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          OPERATION SUM
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <mat-action-row>
+                        <button mat-button *ngIf = "operation.selected !== true"  color="primary" (click) = "selectOperation(operation)">change Sum</button>
+                        <span *ngIf = "operation.selected !== true">
+                          {{operation.sum | currency}} 
+                        </span>
+                        <button mat-button *ngIf = "operation.selected === true" color="primary" (click) = "mergeOperation($event, operation)">merge Sum</button>
+                        <textarea *ngIf = "operation.selected === true"  formControlName="lastName"  cols="" rows="1">
+                          {{operation.sum | currency}}
+                        </textarea>
+
+
+                        <!-- <mat-form-field #fontSize value="16px" [style.fontSize]="fontSize" *ngIf = "operation.selected === true"  formControlName="lastName"  appearance="fill">
+                          <mat-label>OPERATION SUM</mat-label>
+                          <textarea 
+                                    matInput
+                                    cdkTextareaAutosize
+                                    #autosize="cdkTextareaAutosize"
+                                    cdkAutosizeMinRows="1"
+                                    cdkAutosizeMaxRows="5">  {{operation.sum | currency}} </textarea>
+                        </mat-form-field> -->
+
+
+                      </mat-action-row>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+
+                </span>  
+              </td>
+              <td mat-footer-cell *matFooterCellDef class = "totalCost"> {{getTotalCost() | currency}} </td>
+            </ng-container>
+          
+                    
+            <!-- Name Column -->
+            <ng-container matColumnDef="nameCategory">
+                <th mat-header-cell *matHeaderCellDef  class="createdAtCustom"> nameCategory </th>
+                <td mat-cell *matCellDef="let operation" >
+                    <mat-panel-description 
+                    class="nameCategory" 
+                    *ngIf = "operation.category.type === tipe.code && operation.category.name === category.name"
+                  
+                    >
+                        {{operation.category.name}}
+                    </mat-panel-description>  
+                </td>
+                <td mat-footer-cell *matFooterCellDef> </td>
+              </ng-container>
+
+
+              <!-- buttonDell Column -->
+              <ng-container matColumnDef="buttonDelete">
+                <th mat-header-cell *matHeaderCellDef> buttonDell </th>
+                <td mat-cell *matCellDef="let operation" class="delButtonTD">
+                    <span *ngIf = "operation.category.type === tipe.code && operation.category.name === category.name">
+                        <button mat-button color="accent" class="btn"  (click) = "dellOperation(operation)">delete</button>
+                    </span> 
+                </td>
+                <td mat-footer-cell *matFooterCellDef> </td>
+              </ng-container>
+                   
+            <!-- addNewOperation Column -->
+            <!-- <ng-container matColumnDef="addNewOperation">
+             <th mat-header-cell *matHeaderCellDef> 
+              <div class="container" >
+                <button mat-button color="accent" class="btn" (click) = "addOperation(operation)">add new operation</button>
+              </div>
+             </th>
+             <td mat-cell *matCellDef="let operation"></td>
+             <td mat-footer-cell *matFooterCellDef>  </td>
+           </ng-container> -->
+           
+           <!-- createdAt Column -->
+           <ng-container matColumnDef="createdAt" >
+            <th mat-header-cell *matHeaderCellDef> 
+             <div class="container createdAtCustom" >
+              createdAt
+             </div>
+            </th>
+            <td mat-cell *matCellDef="let operation"  class="createdAtCustom">{{operation.createdAt}}</td>
+            <td mat-footer-cell *matFooterCellDef>  </td>
+           </ng-container>
+                   
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+          </table>
+
+    </div>
+  </form>
+ 
+
+
+  

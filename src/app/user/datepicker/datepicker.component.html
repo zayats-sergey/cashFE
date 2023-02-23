@@ -1,0 +1,32 @@
+<p>datepicker works!</p>
+<div class="allSelected">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [formGroup]="range" [rangePicker]="picker" >
+      <input matStartDate formControlName="start" placeholder="Start date">
+      <input matEndDate formControlName="end" placeholder="End date"
+      
+      (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)"
+      >
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <!-- <mat-datepicker-toggle matSuffix [for]="picker"  (click) = "selectData()" ></mat-datepicker-toggle> -->
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  
+    <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+    <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+  </mat-form-field>
+  <!-- важливо -->
+  <!-- <p>Selected range: {{range.value | json}}</p> -->
+
+
+  <div class="container customContainer" >
+      <button mat-button color="accent" class="btn" (click) = "addOperation(operation)">add new operation</button>
+  </div>
+</div>
+
+  
+  <!-- <div class="upload-button button" (click)="file.click()">
+    Upload
+    <input type="file" #file>
+  </div> -->

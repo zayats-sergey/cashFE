@@ -1,0 +1,15 @@
+.custom-jambotron{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: RGBA(33,37,41,var(--bs-bg-opacity,1))!important;
+}
+
+.jambotron-title{
+    color: white;
+    padding: 0.5rem;
+    margin: auto 40px ;
+}
+
+
+

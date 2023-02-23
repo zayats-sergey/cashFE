@@ -1,0 +1,35 @@
+.allSelected{
+    display: flex;
+    justify-content: space-between;
+}
+
+.customContainer{
+    max-width: 30rem;
+    padding: 0;
+    position: relative;
+    margin: auto 0;
+    display: block;
+}
+
+.btn{
+    position: relative;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.156);
+}
+
+@media (max-width: 37.5rem){
+    .allSelected{
+        flex-direction: column;
+    }
+    .customContainer{
+        width: 100%;
+    }
+    .btn{
+        width: 100%;
+    }
+}
+
+
+
+
+

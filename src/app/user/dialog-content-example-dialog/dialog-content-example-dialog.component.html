@@ -1,0 +1,12 @@
+<p>dialog-content-example-dialog works!</p>
+<h2 mat-dialog-title>Dialog COMPONENT</h2>
+<mat-dialog-content class="mat-typography">
+ 
+  <h1>ВИ ХОЧЕТЕ ВИДАТИЛИ КАТЕГОРІЮ ?</h1>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button color="accent" class="btn"  (click) = "dellCategory(category)" [mat-dialog-close]="true" cdkFocusInitial>delete</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

@@ -1,0 +1,31 @@
+
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-top: 8px;
+    width: 300px;
+  }
+
+  .btn{
+    border: 1px solid rgba(0, 0, 0, 0.292);
+  }
+
+  
+  ::ng-deep .mat-form-field-infix {
+    width: auto !important;
+}
+
+::ng-deep .btn {
+ width: 100% !important;
+}
+
+@media (max-width: 37.5rem){
+  .mat-button, .mat-icon-button[_ngcontent-eas-c170], .mat-stroked-button[_ngcontent-eas-c170], .mat-flat-button[_ngcontent-eas-c170] {
+    white-space: nowrap !important;
+  }
+}

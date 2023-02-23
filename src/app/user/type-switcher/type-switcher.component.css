@@ -1,0 +1,30 @@
+
+
+.typeSwitcher-main{
+    display: flex;
+    box-sizing: border-box;
+    /* margin: 0 auto; */
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color:  RGBA(33,37,41,var(--bs-bg-opacity,1))!important;
+}
+
+.btn{
+    border: 1px solid rgba(0, 0, 0, 0.292);
+  }
+
+
+  .tr{
+    width: 100px;
+    border: 4px solid white !important;
+  }
+
+
+  ::ng-deep .mat-button-wrapper {
+    width: auto !important;
+    margin: 0 auto;
+}
+
+
+

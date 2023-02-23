@@ -1,0 +1,15 @@
+<p>type-switcher works!</p>
+<div class="typeSwitcher-main">
+    <button 
+        mat-button 
+        color="accent" 
+        class="typeSwitcher-main btn" 
+        *ngFor = "let type of types" 
+        (click)="selectType(type.code)"
+        >
+         {{ type.title }}
+        <span *ngIf = "selectedType === type.code" class="selectBtn">
+          <hr class="tr">
+        </span>
+    </button>
+</div>

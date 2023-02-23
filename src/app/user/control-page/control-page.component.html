@@ -1,0 +1,40 @@
+<p>control-page works!</p>
+<app-type-switcher
+(onSelectType) = 'selectType($event)'
+[selectedType] = 'selectedType'
+></app-type-switcher>
+<app-categories-editor
+(onAddNewCategory) = "addNewCategory($event)"
+></app-categories-editor>
+<app-categories
+[categories] = "categories"
+[selectedType] = "selectedType"
+[category] = "category"
+(onSelectCategory) = "selectCategory($event)"
+(onDellCategory) = "dellCategory($event)"
+(onSelectCategory) = "onSelectCategory($event)"
+></app-categories>
+<app-datepicker
+(onSelectDataStart)= "selectDataStart($event)"
+
+[operations] = "operations"
+[category] = "category"
+[selectedType] = "selectedType"
+(onAddOperation) = "addOperation($event)"
+></app-datepicker>
+<app-operations
+[categories] = "categories"
+[operations] = "operations"
+[category] = "category"
+[selectedType] = "selectedType"
+(onMergeOperation) = "mergeOperation($event)"
+(onAddOperation) = "addOperation($event)"
+(onDellOperation) = "dellOperation($event)"
+[shortCreatedAt] = "shortCreatedAt"
+></app-operations>
+
+
+
+
+
+

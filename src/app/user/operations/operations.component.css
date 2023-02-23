@@ -1,0 +1,117 @@
+.demo-table {
+    width: 100%;
+  }
+  
+  .mat-column-demo-position {
+    width: 3.2rem;
+    border-right: 1px solid currentColor;
+    padding-right: 2.4rem;
+    text-align: center;
+  }
+  
+  .mat-column-demo-name {
+    padding-left: 1.6rem;
+    font-size: 2.0rem;
+  }
+  
+  .mat-column-demo-weight {
+    font-style: italic;
+  }
+  
+  .mat-column-demo-symbol {
+    width: 3.2rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .mat-action-row{
+    justify-content: space-around ;
+  }
+  .mat-expansion-panel-content{
+    max-width: 100%;
+  }
+
+  mat-panel-title.mat-expansion-panel-header-title.ng-tns-c134-5 {
+    width: 100%;
+}
+
+mat-form-field {
+  margin-right: 1.2rem;
+}
+
+.total{
+  font-size: 2.0rem;
+}
+
+.totalCost{
+  color: red;
+  font-size: 2.0rem;
+}
+
+.btn{
+  border: 1px solid rgba(0, 0, 0, 0.292);
+}
+
+.nameCategory{
+  font-size: 1.5rem;
+  color: black;
+  margin: 0.5rem 1rem;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+  padding-left: 1rem;
+}
+
+.numberPosition{
+  width: 1rem !important;
+}
+
+th.mat-header-cell {
+  /* align-content: center; */
+  text-align: center;
+}
+
+
+@media (max-width: 37.5rem){
+  table { border-spacing: 0 }
+  td, th { 
+      float: left;
+      /* width: 20rem; */
+      width: 100%;
+      padding:0;
+      word-wrap: break-word; 
+      /* margin: 0.2rem 0.2rem ; */
+    }
+ .createdAtCustom{
+  display: none !important;
+ }
+
+ .total, .totalCost{
+  font-size: 1.0rem;
+ }
+
+.mat-expansion-panel-header{
+  padding: 0.2rem;
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button{
+  min-width: 4rem;
+  line-height: 2.8rem;
+  padding: 0 0.2rem;
+  margin: 0.1rem;
+  margin-bottom: 1rem;
+}
+
+.delButtonTD{
+  min-width: 4rem;
+}
+
+::ng-deep .mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button{
+  white-space: pre-wrap !important;
+}
+
+
+}
+
+
+

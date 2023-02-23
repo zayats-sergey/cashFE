@@ -1,0 +1,32 @@
+<p>categories-editor works!</p>
+<form   class="mat-elevation-z8 demo-table" (submit) = "addNewCategory(num, id, type, name)">
+    <!-- <th > Num </th> -->
+    <td  > 
+        <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>num</mat-label>
+                    <input matInput [(ngModel)] = "num" name = "num"> 
+         </mat-form-field>
+    </td>
+    <td  > 
+        <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>id</mat-label>
+                    <input matInput [(ngModel)] = "id" name = "id"> 
+         </mat-form-field>
+    </td>
+    <td  > 
+        <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>type</mat-label>
+                    <input matInput [(ngModel)] = "type" name = "type"> 
+         </mat-form-field>
+    </td>
+    <td  > 
+        <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>name</mat-label>
+                    <input matInput [(ngModel)] = "name" name = "name"> 
+         </mat-form-field>
+    </td>
+    <td>
+        <button mat-button color="accent" class="btn">Add Category</button>
+    </td>
+   
+</form>

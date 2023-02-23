@@ -1,0 +1,22 @@
+<div class="jambotron custom-jambotron">
+    <h3 class="jambotron-title">Кабінет Користувача</h3>
+    <button 
+        *ngIf = "!showBtn" 
+        class = "btn btn-warning  me-4" 
+        (click) = 'logoutUser()'>EXIT
+    </button>
+    <button 
+        *ngIf = "showBtn" 
+        class = " btn btn-outline-warning me-3" 
+        [routerLink] = "[{outlets: {outletControlPage: 'control-page'}}]" 
+        (click) = "disabledBtn()">Go to Control-Page addition
+    </button>
+</div>
+<router-outlet name = "outletControlPage"></router-outlet>
+
+<!-- <button   class = " btn btn-outline-warning me-3" [routerLink] = "['control-page']">Go to Control-Page</button>
+<router-outlet ></router-outlet> -->
+
+
+
+
