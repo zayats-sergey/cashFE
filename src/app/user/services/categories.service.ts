@@ -23,8 +23,8 @@ addDataCategories(category: Category): Observable<Category>{
   let headers = new HttpHeaders();
   headers.append('Content-Type', 'application/json');
   return this.http.post<Category>(
-    // "http://localhost:3000/account/dashboard/categories",
-    "dashboard/categories",
+    "http://localhost:3000/account/dashboard/categories",
+    // "dashboard/categories",
     category,
     {headers: headers}
   )
@@ -34,8 +34,8 @@ getCategories(): Observable<Category[]>{
   let headers = new HttpHeaders();
   headers.append('Content-Type', 'application/json');
   return this.http.get<Category[]>(
-    // "http://localhost:3000/account/dashboard/allCategories",
-    "dashboard/allCategories",
+    "http://localhost:3000/account/dashboard/allCategories",
+    // "dashboard/allCategories",
     {headers: headers}
   )
 }
@@ -49,8 +49,8 @@ addNewCategory(category: Category): Observable<Category>{
   let headers = new HttpHeaders();
   headers.append('Content-Type', 'application/json');
   return this.http.post<Category>(
-    // "http://localhost:3000/account/dashboard/categories",
-    "dashboard/categories",
+    "http://localhost:3000/account/dashboard/categories",
+    // "dashboard/categories",
     category,
     {headers: headers}
   )
@@ -68,8 +68,8 @@ dellCategory(category: any): Observable<any>{
   let headers = new HttpHeaders();
   headers.append('Content-Type', 'application/json');
   return this.http.delete<any>(
-    // "http://localhost:3000/account/dashboard/allCategories/" 
-    "dashboard/categories"
+    "http://localhost:3000/account/dashboard/allCategories/" 
+    // "dashboard/categories"
     + idCategory,
     {headers: headers}
   )

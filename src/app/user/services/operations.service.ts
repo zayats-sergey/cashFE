@@ -25,8 +25,8 @@ export class OperationsService {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.http.post<Operation>( 
-      // "http://localhost:3000/account/dashboard/operations",
-      "dashboard/operations",
+      "http://localhost:3000/account/dashboard/operations",
+      // "dashboard/operations",
       operation,
       {headers: headers}
       )
@@ -36,8 +36,8 @@ export class OperationsService {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.http.get<Operation[]>( 
-      // "http://localhost:3000/account/dashboard/allOperations",
-      "dashboard/allOperations",
+      "http://localhost:3000/account/dashboard/allOperations",
+      // "dashboard/allOperations",
       {headers: headers}
       )
   }
@@ -52,8 +52,8 @@ export class OperationsService {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.http.put<Operation>( 
-      // "http://localhost:3000/account/dashboard/allOperations/" 
-      "dashboard/allOperations/"
+      "http://localhost:3000/account/dashboard/allOperations/" 
+      // "dashboard/allOperations/"
       + operation._id,
       operation,
       {headers: headers}
@@ -67,8 +67,8 @@ export class OperationsService {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     return this.http.delete<Operation>( 
-      // "http://localhost:3000/account/dashboard/allOperations/"
-      "dashboard/allOperations/"
+      "http://localhost:3000/account/dashboard/allOperations/"
+      // "dashboard/allOperations/"
       + operation._id,
       {headers: headers}
       )
@@ -92,8 +92,8 @@ export class OperationsService {
       let headers = new HttpHeaders();
       headers.append('Content-Type', 'application/json');
       return this.http.post<any>( 
-        // "http://localhost:3000/account/dashboard/allOperations",
-        "dashboard/allOperations",
+        "http://localhost:3000/account/dashboard/allOperations",
+        // "dashboard/allOperations",
         someNewStart,
         {headers: headers}
         )
